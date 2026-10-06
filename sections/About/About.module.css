@@ -1,0 +1,11 @@
+.aboutText {
+  max-width: 60ch; /* linha confortável de leitura */
+  font-size: var(--fs-17);
+  line-height: 1.7;
+  color: var(--color-text-2);
+  text-wrap: pretty;
+}
+
+.aboutHighlight {
+  color: var(--color-text);
+}

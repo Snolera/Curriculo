@@ -1,0 +1,36 @@
+.educationItem {
+  display: flex;
+  flex-wrap: wrap; /* no mobile o período desce para a linha de baixo */
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-24);
+  padding-block: var(--space-16);
+  border-top: 1px solid var(--color-border);
+}
+
+.educationItem:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.educationInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.educationCourse {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.educationInstitution {
+  font-size: var(--fs-14);
+  color: var(--color-text-2);
+}
+
+.educationPeriod {
+  padding-top: 3px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-13);
+  color: var(--color-text-2);
+}

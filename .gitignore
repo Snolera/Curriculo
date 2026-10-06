@@ -1,0 +1,27 @@
+# dependências
+/node_modules
+
+# build
+/.next/
+/out/
+
+# testes
+/coverage
+
+# ambiente (nunca versionar segredos)
+.env*
+!.env.example
+
+# sistema / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# anotações internas (não vão para o repositório público)
+CLAUDE.md
+memory.md
+README.interno.md
+/design_handoff_portfolio/
+
+# vercel
+.vercel

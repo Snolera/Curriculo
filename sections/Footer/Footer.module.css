@@ -1,0 +1,12 @@
+.footer {
+  padding: var(--space-24) 0 var(--space-64);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--fs-13);
+  color: var(--color-text-2);
+}
+
+@media (max-width: 1023px) {
+  .footer {
+    padding-bottom: var(--space-40);
+  }
+}

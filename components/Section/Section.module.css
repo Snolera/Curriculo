@@ -1,0 +1,28 @@
+.section {
+  margin-bottom: var(--space-112);
+  scroll-margin-top: var(--space-96); /* âncora não cola no topo */
+}
+
+.section--last {
+  margin-bottom: var(--space-64);
+}
+
+.sectionTitle {
+  margin-bottom: var(--space-24);
+  font-size: var(--fs-12);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+@media (max-width: 1023px) {
+  .section {
+    margin-bottom: var(--space-72);
+    scroll-margin-top: var(--space-24);
+  }
+
+  .section--last {
+    margin-bottom: var(--space-64);
+  }
+}

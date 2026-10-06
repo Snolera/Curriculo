@@ -1,0 +1,75 @@
+.nav {
+  margin-top: var(--space-64);
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-16);
+  min-height: var(--touch-target);
+  color: var(--color-text-2);
+  font-size: var(--fs-12);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.navLine {
+  display: block;
+  width: 2rem; /* 32px */
+  height: 1px;
+  background: var(--color-text-2);
+}
+
+/* Hover/foco: linha 48px clara */
+.navLink:hover,
+.navLink:focus-visible {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.navLink:hover .navLine,
+.navLink:focus-visible .navLine {
+  width: 3rem;
+  background: var(--color-text);
+}
+
+/* Ativo: linha 64px laranja (repetido com :hover para vencer a especificidade acima) */
+.navLink--active,
+.navLink--active:hover {
+  color: var(--color-text);
+}
+
+.navLink--active .navLine,
+.navLink--active:hover .navLine,
+.navLink--active:focus-visible .navLine {
+  width: 4rem;
+  background: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .navLink {
+    transition: color 200ms ease;
+  }
+
+  /* Exceção consciente: anima width para o rótulo deslizar como no design (elemento de 1px, custo mínimo) */
+  .navLine {
+    transition:
+      width 250ms ease,
+      background-color 250ms ease;
+  }
+}
+
+/* No mobile a página é curta o bastante para dispensar a nav */
+@media (max-width: 1023px) {
+  .nav {
+    display: none;
+  }
+}

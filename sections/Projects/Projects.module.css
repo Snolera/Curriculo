@@ -1,0 +1,13 @@
+/* Margem negativa = padding do card: o texto alinha com o resto quando o card está sem fundo */
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  margin-left: calc(var(--space-20) * -1);
+}
+
+@media (max-width: 1023px) {
+  .projectsList {
+    margin-left: calc(var(--space-16) * -1);
+  }
+}

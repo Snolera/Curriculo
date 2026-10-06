@@ -1,0 +1,16 @@
+.contactText {
+  max-width: 28ch;
+  font-size: var(--fs-22);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  text-wrap: pretty;
+}
+
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  margin-top: var(--space-28);
+}

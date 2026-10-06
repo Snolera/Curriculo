@@ -1,0 +1,56 @@
+/* Desktop: coluna fixa (sticky) com conteúdo no topo e ícones no rodapé */
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: var(--space-40);
+  width: 40%;
+  height: 100vh;
+  overflow-y: auto;
+  padding: clamp(2.5rem, 10vh, 6rem) 10px clamp(2rem, 7vh, 4rem);
+}
+
+.headerIntro {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerName {
+  font-size: var(--fs-60);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.headerRole {
+  margin-top: var(--space-14);
+  font-size: var(--fs-20);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.headerBio {
+  max-width: 21.25rem; /* 340px */
+  margin-top: var(--space-16);
+  color: var(--color-text-2);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+/* Mobile/tablet: header volta ao fluxo normal, sem sticky */
+@media (max-width: 1023px) {
+  .header {
+    position: static;
+    width: 100%;
+    height: auto;
+    overflow-y: visible;
+    padding: var(--space-56) 0 var(--space-40);
+  }
+
+  .headerName {
+    font-size: var(--fs-44);
+  }
+}

@@ -1,0 +1,39 @@
+.social {
+  display: flex;
+  gap: var(--space-8);
+  margin-left: -10px; /* alinha o glifo ao texto, compensando o alvo de 44px */
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  color: var(--color-text-2);
+}
+
+.socialLink:hover {
+  color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .socialLink {
+    transition: color 150ms ease;
+  }
+}
+
+/* Mobile: os ícones piscam em laranja um por um, só no carregamento (após a entrada do Header) */
+@media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
+  .socialLink svg {
+    animation: socialPulse 1s ease-in-out 1s;
+  }
+
+  li:nth-child(2) > .socialLink svg { animation-delay: 1.15s; }
+  li:nth-child(3) > .socialLink svg { animation-delay: 1.3s; }
+}
+
+/* Sem 0%/100%: começa e termina na cor normal do ícone */
+@keyframes socialPulse {
+  50% { color: var(--color-accent); }
+}

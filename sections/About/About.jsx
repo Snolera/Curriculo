@@ -11,7 +11,7 @@ export default function About() {
         rápido até em 3G. Trabalho principalmente com{' '}
         <span className={styles.aboutHighlight}>React, Next, JavaScript e CSS moderno</span>, sempre com
         acessibilidade no checklist. Estou buscando minha{' '}
-        <span className={styles.aboutHighlight}>primeira vaga como Desenvoledor júnior</span>, em um
+        <span className={styles.aboutHighlight}>primeira vaga como Desenvolvedor júnior</span>, em um
         time onde eu possa aprender com code review e entregar coisas reais.
       </p>
     </Section>

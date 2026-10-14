@@ -11,7 +11,7 @@ export default function Contact() {
       </p>
       <div className={styles.contactActions}>
         <Button href={contact.resume} newTab>
-          Ver currículo
+          Ver Linkedin
         </Button>
         <Button href={`mailto:${contact.email}`} variant="secondary">
           <span className="srOnly">Enviar e-mail para</span> {contact.email}

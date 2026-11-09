@@ -5,7 +5,8 @@ import { fadeUp } from '@/lib/motion';
 import styles from './Section.module.css';
 
 // Seção nomeada pelo próprio h2 (vira landmark "region") com reveal ao entrar na tela
-export default function Section({ id, title, last = false, children }) {
+// hideTitle: o h2 continua no HTML (SEO/landmark), mas só para leitores de tela
+export default function Section({ id, title, last = false, hideTitle = false, children }) {
   const reduce = useReducedMotion();
   const titleId = `t-${id}`;
   const className = last ? `${styles.section} ${styles['section--last']}` : styles.section;
@@ -27,7 +28,7 @@ export default function Section({ id, title, last = false, children }) {
       initial="hidden"
       {...trigger}
     >
-      <h2 id={titleId} className={styles.sectionTitle}>
+      <h2 id={titleId} className={hideTitle ? 'srOnly' : styles.sectionTitle}>
         {title}
       </h2>
       {children}

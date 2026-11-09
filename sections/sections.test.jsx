@@ -1,5 +1,5 @@
 import { render, screen, within } from '@testing-library/react';
-import { contact, education, projects } from '@/lib/content';
+import { contact, education, projectGroups } from '@/lib/content';
 import About from './About/About';
 import Contact from './Contact/Contact';
 import Education from './Education/Education';
@@ -13,10 +13,21 @@ describe('About', () => {
 });
 
 describe('Projects', () => {
-  it('renderiza um article por projeto', () => {
+  it('é uma região "Projetos" com h2 só para leitores de tela', () => {
     render(<Projects />);
     const region = screen.getByRole('region', { name: 'Projetos' });
-    expect(within(region).getAllByRole('article')).toHaveLength(projects.length);
+    expect(region).toHaveAttribute('id', 'projetos');
+    expect(within(region).getByRole('heading', { level: 2, name: 'Projetos' })).toHaveClass(
+      'srOnly',
+    );
+  });
+
+  it('tem uma aba por grupo e mostra os projetos do primeiro', () => {
+    render(<Projects />);
+    expect(screen.getAllByRole('tab')).toHaveLength(projectGroups.length);
+    expect(within(screen.getByRole('tabpanel')).getAllByRole('article')).toHaveLength(
+      projectGroups[0].projects.length,
+    );
   });
 });
 
@@ -32,9 +43,9 @@ describe('Education', () => {
 });
 
 describe('Contact', () => {
-  it('tem CTA do currículo e link de e-mail', () => {
+  it('tem CTA do LinkedIn e link de e-mail', () => {
     render(<Contact />);
-    expect(screen.getByRole('link', { name: /Ver currículo/ })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /Ver Linkedin/ })).toHaveAttribute(
       'href',
       contact.resume,
     );
